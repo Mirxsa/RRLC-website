@@ -243,27 +243,6 @@ body {
   .site-header {
     padding: 1rem 1.5rem;
   }
-  #menu-icon {
-    display: block;
-  }
-  .navbar {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: white;
-    width: 100%;
-    flex-direction: column;
-    display: none;
-    box-shadow: 0 4px 5px rgba(0,0,0,0.1);
-  }
-  .navbar.active {
-    display: flex;
-  }
-  .navbar a {
-    padding: 0.8rem 0;
-    border-bottom: 1px solid #eee;
-  }
-
   .products-section {
     padding: 1.5rem;
     flex-direction: column;
