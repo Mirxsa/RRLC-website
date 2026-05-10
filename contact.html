@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | RRLC Supermarket</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+<link rel="stylesheet" href="styles.css" />
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+/* ✅ PARA LAGING NASA DULO ANG FOOTER */
+html {
+    height: 100%;
+}
+body{
+    background: linear-gradient(to right, #e0e0e0, #f0f2f2); /* Gray + Silver tone */
+    min-height: 100%;
+    padding: 30px 0 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; 
+}
+
+/* TITLE */
+h1{
+    text-align:center;
+    font-size:60px;
+    color:#3a3a3a;
+    margin-bottom:60px;
+    font-weight:700;
+    letter-spacing:2px;
+    text-shadow:2px 2px 10px rgba(0,0,0,0.08);
+    position: relative;
+    top: 50px;
+}
+
+/* ✅ LIGHT GREEN ACCENT SA TITLE */
+h1 span {
+    color: #84b64c; /* Light Green */
+}
+
+/* CONTAINER */
+.container{
+    display:flex;
+    justify-content:center;
+    gap:45px;
+    flex-wrap:wrap;
+    padding: 0 20px;
+    flex: 1; 
+    margin-bottom: 80px;
+    margin-top: 40px;
+}
+
+/* CARD — GRAY + SILVER + LIGHT GREEN THEME */
+.card{
+    width:350px;
+    background: linear-gradient(145deg, #ffffff, #f1f1f1); /* Silver base */
+    border-radius:30px;
+    overflow:hidden;
+    box-shadow: 0 12px 25px rgba(70, 70, 70, 0.12);
+    transition:0.4s ease;
+    border: 1px solid #d0d0d0;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow: 0 18px 35px rgba(70, 70, 70, 0.2);
+    border-color: #84b64c; /* Light green border on hover */
+}
+
+/* CARD HEADER */
+.card h2 {
+    background: linear-gradient(to right, #b8b8b8, #d7d7d7); /* Gray to Silver */
+    color: #2e2e2e;
+    padding: 20px 25px;
+    font-size: 24px;
+    font-weight: 600;
+    border-bottom: 3px solid #84b64c; /* Light green accent */
+    text-align: center;
+}
+
+/* LIST STYLE */
+.card ul {
+    padding: 25px 30px;
+    list-style: none;
+}
+
+.card ul li {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #c9c9c9;
+    color: #444;
+    line-height: 1.7;
+}
+
+.card ul li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.card ul li strong {
+    color: #84b64c; /* Light green for labels */
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+    h1{
+        font-size:45px;
+    }
+    .container{
+        gap:30px;
+    }
+}
+
+@media(max-width:500px){
+    h1{
+        font-size:34px;
+    }
+    .card{
+        width:100%;
+    }
+}
+
+
+/* ==========================================
+   ✅ FOOTER — SAME AS YOUR ORIGINAL DESIGN
+   ========================================== */
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+@media (max-height:800px) {
+  footer {
+    position: static;
+  }
+  header {
+    padding-top: 40px;
+  }
+}
+
+.footer-distributed {
+  background-color: #2d2a30;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  font: normal 16px sans-serif;
+  padding: 50px 50px 60px 50px;
+  margin: 0;
+  margin-top: auto;
+}
+
+.footer-distributed .footer-left,
+.footer-distributed .footer-center,
+.footer-distributed .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* --- LEFT PART --- */
+.footer-distributed .footer-left {
+  width: 30%;
+}
+
+.footer-distributed h3 {
+  color: #ffffff;
+  font-size: 36px;
+  margin: 0;
+  font-weight: normal;
+}
+.footer-distributed h3 span {
+  color: #dcfaad;
+}
+
+.footer-distributed .footer-links {
+  color: #ffffff;
+  margin: 20px 0 12px;
+}
+
+.footer-distributed .footer-links a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+.footer-distributed .footer-links a:hover {
+  color: #d3d5da;
+}
+
+.footer-distributed .footer-company-name {
+  color: #a5a5a5;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+/* --- CENTER PART --- */
+.footer-distributed .footer-center {
+  width: 35%;
+}
+
+.footer-distributed .footer-center div {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.footer-distributed .footer-center i {
+  background-color: #acabab;
+  color: #ffffff;
+  font-size: 18px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 38px;
+  margin-right: 15px;
+}
+
+.footer-distributed .footer-center p {
+  color: #ffffff;
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-distributed .footer-center p a {
+  color: #838583;
+  text-decoration: none;
+}
+
+/* --- RIGHT PART --- */
+.footer-distributed .footer-right {
+  width: 30%;
+}
+
+.footer-distributed .footer-company-about {
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer-distributed .footer-company-about span {
+  display: block;
+  color: #cccccc;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.footer-distributed .footer-icons {
+  margin-top: 15px;
+}
+
+.footer-distributed .footer-icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  background-color: #2d2a30;
+  border: 1px solid #444;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+.footer-distributed .footer-icons a:hover {
+  background-color: #d3d5da;
+  color: #2d2a30;
+}
+
+/* --- RESPONSIVE --- */
+@media(max-width: 880px) {
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: left;
+  }
+  .footer-distributed .footer-center i {
+    margin-left: 0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="logo">
+            <img src="logorrlc.png" alt="RRLC Supermarket logo" />
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon" aria-label="Open menu"></div>
+
+        <nav class="navbar" aria-label="Main navigation">
+            <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product-slider.html">Products</a>
+                <a href="promos.html">Promos</a>
+                <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+    
+<div class="promo">
+<h1>Contact <span>Us</span></h1>
+</div>
+
+<div class="container">
+
+    <!-- CONTACT INFO -->
+    <div class="card">
+        <h2>Contact Info</h2>
+        <ul>
+            <li>
+                <strong>Phone & Email</strong>
+                Phone: +63 912 345 6789<br>
+                Email: rrlcsupermarket@gmail.com
+            </li>
+            <li>
+                <strong>Address & Map</strong>
+                RRLC SUPERMARKET Main Branch,<br>
+                Magalang Pampanga, Philippines
+            </li>
+            <li>
+                <strong>Opening Hours</strong>
+                Monday - Friday: 8:00 AM - 6:00 PM<br>
+                Saturday: 9:00 AM - 5:00 PM<br>
+                Sunday: Closed<br><br>
+                Operating hours may vary during public holidays and special events.
+            </li>
+        </ul>
+    </div>
+
+    <!-- CUSTOMER SUPPORT -->
+    <div class="card">
+        <h2>Customer Support</h2>
+        <ul>
+            <li>
+                <strong>FAQs</strong>
+                Visit our Frequently Asked Questions page.
+            </li>
+            <li>
+                <strong>Live Chat</strong>
+                Chat with our support team online.
+            </li>
+            <li>
+                <strong>Submit a Ticket</strong>
+                Send concerns through our support form.
+            </li>
+        </ul>
+    </div>
+
+    <!-- FEEDBACK -->
+    <div class="card">
+        <h2>Feedback</h2>
+        <ul>
+            <li>
+                <strong>Leave a Review</strong>
+                Share your experience with RRLC.
+            </li>
+            <li>
+                <strong>Suggestions</strong>
+                Give ideas to improve our services.
+            </li>
+            <li>
+                <strong>Complaints</strong>
+                Report issues and concerns directly.
+            </li>
+        </ul>
+    </div>
+
+</div>
+
+<footer class="footer-distributed">
+        <div class="footer-left">
+            <h3> RRLC <span>Supermarket</span></h3>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product-slider.html">Products</a>
+                <a href="promos.html">Promos</a>
+                <a href="contact.html">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2026 
+                <strong>RRLC Supermarket</strong> | All rights reserved
+            </p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="bx bx-map"></i>
+                <p><span>Magalang</span> Pampanga</p>
+            </div>
+
+            <div>
+                <i class="bx bx-phone"></i>
+                <p>+639 3XX 14XX 10</p>
+            </div>
+
+            <div>
+                <i class="bx bx-envelope"></i>
+                <p><a href="mailto:rrlcsupermarket@gmail.com">rrlcsupermarket@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                <strong>RRLC Supermarket</strong> is a local retail store that offers a wide range of 
+                affordable groceries, household goods, and daily essentials. It serves as a convenient one-stop shop 
+                for communities in Pampanga and nearby areas.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
