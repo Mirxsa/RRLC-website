@@ -4,350 +4,331 @@
   <meta charset="UTF-8">
   <title>Our Products Slider</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
-  <style>
-    body {
-      font-family: Arial, "Times New Roman", serif;
-      margin: 0;
-      padding: 0;
-      background: white;
-      color: black;
-      overflow-x: hidden;
-    }
- 
-    .products-section {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 3rem;
-      padding: 4rem 6%;
-      min-height: 100vh;
-      box-sizing: border-box;
-      flex-wrap: wrap;
-    }
- 
-    .products-info {
-      flex: 1;
-      min-width: 280px;
-    }
- 
-    .products-info h1 {
-      font-size: 3rem;
-      color: black;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
- 
-    .products-info p {
-      font-size: 1rem;
-      color: #555;
-      margin-bottom: 2rem;
-      line-height: 1.6;
-    }
- 
-    .products-info button {
-      background: black;
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 25px;
-      cursor: pointer;
-      font-weight: 600;
-    }
- 
-    /* Exactly 3 cards: 3x220px + 2x32px gap = 724px */
-    .slider-container {
-      flex: 2;
-      max-width: 724px;
-      overflow: hidden;
-    }
- 
-    .slider {
-      display: flex;
-      gap: 32px;
-      transition: transform 0.5s ease-in-out;
-      padding: 1rem 0;
-    }
- 
-    /* No more double border */
-    .product-card {
-      background: #f5f5f5;
-      border-radius: 20px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-      width: 220px;
-      min-height: 350px;
-      text-align: center;
-      flex-shrink: 0;
-      overflow: hidden;
-      padding-bottom: 1rem;
-    }
- 
-    .product-card img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-    }
- 
-    .product-card h3 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.2rem;
-    }
- 
-    .product-card button {
-      background: black;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 20px;
-      cursor: pointer;
-    }
- 
-    .slider-controls {
-      margin-top: 2rem;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
- 
-    .arrow {
-      background: black;
-      color: white;
-      border: none;
-      padding: 0.6rem 1rem;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.2rem;
-      transition: 0.3s;
-    }
- 
-    .arrow:hover {
-      background: grey;
-    }
- 
-    @media (max-width: 768px) {
-      .products-section {
-        flex-direction: column;
-        padding: 2rem 5%;
-        text-align: center;
-      }
- 
-      .products-info {
-        padding-right: 0;
-      }
- 
-      .products-info h1 {
-        font-size: 2.2rem;
-      }
- 
-      .slider-container {
-        max-width: 100%;
-      }
-    }
-  </style>
+    <!-- Boxicons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <style>
+   body {
+  font-family: Arial, "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  background: white;
+  color: black;
+  overflow-x: hidden;
+}
+
+/* SECTION */
+.products-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  padding: 4rem 6%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+}
+
+/* LEFT INFO */
+.products-info {
+  flex: 1;
+  min-width: 280px;
+}
+
+.products-info h1 {
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.products-info p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.products-info button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* SLIDER AREA */
+.slider-container {
+  flex: 2;
+  overflow: hidden;
+  width: 100%;
+}
+
+.slider {
+  display: flex;
+  gap: 32px;
+  transition: transform 0.5s ease-in-out;
+  padding: 1rem 0;
+}
+
+/* PRODUCT CARD */
+.product-card {
+  background: #d3d3d3;
+  border: 2px solid black;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  width: 220px;
+  min-height: 350px;
+  text-align: center;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding-bottom: 1rem;
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  margin: 1rem 0 0.5rem;
+  font-size: 1.2rem;
+}
+
+.product-card button {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* SLIDER BUTTONS */
+.slider-controls {
+  margin-top: 2rem;
+  justify-content: center;
+  display: flex;
+  gap: 1rem;
+}
+
+.arrow {
+  background: black;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: 0.3s;
+}
+
+.arrow:hover {
+  background: grey;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .products-section {
+    flex-direction: column;
+    padding: 2rem 5%;
+    text-align: center;
+  }
+
+  .products-info {
+    padding-right: 0;
+  }
+
+  .products-info h1 {
+    font-size: 2.2rem;
+  }
+
+  .slider {
+    justify-content: center;
+  }
+}
+</style>
+  
 </head>
 <body>
+    <header class="site-header">
+        <div class="logo">
+            <img src="logorrlc.png" alt="RRLC Supermarket logo" />
+        </div>
+
+        <div class="bx bx-menu" id="menu-icon" aria-label="Open menu"></div>
+
+        <nav class="navbar" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product-slider.html">Products</a>
+                <a href="promos.html">Promos</a>
+                <a href="contact.html">Contact</a>
+        </nav>
+    </header>
  
-  <header class="site-header">
-    <div class="logo">
-      <img src="logorrlc.png" alt="RRLC Supermarket logo" />
-    </div>
-    <div class="bx bx-menu" id="menu-icon" aria-label="Open menu"></div>
-    <nav class="navbar" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="product-slider.html">Products</a>
-      <a href="promos.html">Promos</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
- 
+
   <section class="products-section">
     <div class="products-info">
       <h1>Our Products</h1>
       <p>Fresh and quality products for your everyday needs.</p>
       <button>Explore</button>
     </div>
- 
+
     <div class="slider-container">
       <div class="slider" id="slider">
- 
         <div class="product-card">
-          <img src="grocery.jpg" alt="Groceries">
-          <h3>Groceries</h3>
+          <img src="grocery.jpg" alt="Canned Goods">
+          <h3> Groceries </h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="cans.jpg" alt="Canned Goods">
+          <img src="cans.jpg" alt="Detergents">
           <h3>Canned Goods</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="snacks.jpg" alt="Snacks">
-          <h3>Snacks</h3>
+          <img src="snacks.jpg" alt="Kitchen Supplies">
+          <h3> Snacks </h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="dairy.jpg" alt="Dairies">
-          <h3>Dairies</h3>
+          <img src="dairy.jpg" alt="Snacks">
+          <h3> Dairies</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
           <img src="drinks.jpg" alt="Drinks">
           <h3>Drinks</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="fresh.jpg" alt="Fresh Produce">
+          <img src="fresh.jpg" alt="Personal Care">
           <h3>Fresh Produce</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="vedgetable.jpg" alt="Fruits and Veggies">
+          <img src="vedgetable.jpg" alt="Meat">
           <h3>Fruits and Veggies</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="detergent.jpg" alt="Cleaning Products">
+          <img src="detergent.jpg" alt="Bakery">
           <h3>Cleaning Products</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="school.jpg" alt="School Supplies">
+          <img src="school.jpg" alt="Snacks">
           <h3>School Supplies</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="clothes.jpg" alt="Fashion">
+          <img src="clothes.jpg" alt="Snacks">
           <h3>Fashion</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="personal.jpg" alt="Personal Care">
+          <img src="personal.jpg" alt="Snacks">
           <h3>Personal Care</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="health.jpg" alt="Health Products">
+          <img src="health.jpg" alt="Snacks">
           <h3>Health Products</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="kitchen.jpg" alt="Kitchen Tools">
+          <img src="kitchen.jpg" alt="Snacks">
           <h3>Kitchen Tools</h3>
           <button>View Products</button>
         </div>
- 
         <div class="product-card">
-          <img src="appliances.jpg" alt="Home Appliances">
+          <img src="appliances.jpg" alt="Snacks">
           <h3>Home Appliances</h3>
           <button>View Products</button>
         </div>
- 
+        
       </div>
- 
+
       <div class="slider-controls">
-        <button class="arrow" id="prev">&#8249;</button>
-        <button class="arrow" id="next">&#8250;</button>
+        <button class="arrow left" id="prev">&#8249;</button>
+        <button class="arrow right" id="next">&#8250;</button>
       </div>
     </div>
   </section>
- 
+
+  <script src="slider.js"></script>
+</body>
+</html>
+
   <section class="featured-brands" aria-label="Featured brands">
-    <div class="container">
-      <h3 class="section-title">FEATURED BRANDS</h3>
-      <div class="brands-row">
-        <img src="cdo.png" alt="CDO logo" />
-        <img src="bountyf.png" alt="Bounty Fresh" />
-        <img src="nestle.png" alt="Nestle logo" />
-        <img src="ur.png" alt="UR Logo" />
-        <img src="magnolia.png" alt="Magnolia logo" />
-        <img src="ul.jpg" alt="UL Logo" />
-      </div>
-    </div>
-  </section>
- 
+        <div class="container">
+            <h3 class="section-title">FEATURED BRANDS</h3>
+            <div class="brands-row">
+                <img src="cdo.png" alt="CDO logo" />
+                <img src="bountyf.png" alt="Bounty Fresh" />
+                <img src="nestle.png" alt="Nestle logo" />
+                <img src="ur.png" alt="UR Logo" />
+                <img src="magnolia.png" alt="Magnolia logo" />
+                <img src="ul.jpg" alt="UL Logo" />
+            </div>
+        </div>
+    </section>
+
+    <script src="slider.js"></script>
+
   <footer class="footer-distributed">
-    <div class="footer-left">
-      <h3>RRLC <span>Supermarket</span></h3>
-      <p class="footer-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="product-slider.html">Products</a>
-        <a href="promos.html">Promos</a>
-        <a href="contact.html">Contact</a>
-      </p>
-      <p class="footer-company-name">Copyright © 2026
-        <strong>RRLC Supermarket</strong> | All rights reserved
-      </p>
-    </div>
- 
-    <div class="footer-center">
-      <div>
-        <i class="bx bx-map"></i>
-        <p><span>Magalang</span> Pampanga</p>
-      </div>
-      <div>
-        <i class="bx bx-phone"></i>
-        <p>+639 3XX 14XX 10</p>
-      </div>
-      <div>
-        <i class="bx bx-envelope"></i>
-        <p><a href="mailto:rrlcsupermarket@gmail.com">rrlcsupermarket@gmail.com</a></p>
-      </div>
-    </div>
- 
-    <div class="footer-right">
-      <p class="footer-company-about">
-        <span>About the company</span>
-        <strong>RRLC Supermarket</strong> is a local retail store that offers a wide range of
-        affordable groceries, household goods, and daily essentials. It serves as a convenient one-stop shop
-        for communities in Pampanga and nearby areas.
-      </p>
-      <div class="footer-icons">
-        <a href="#"><i class="bx bxl-facebook"></i></a>
-        <a href="#"><i class="bx bxl-instagram"></i></a>
-        <a href="#"><i class="bx bxl-linkedin"></i></a>
-        <a href="#"><i class="bx bxl-twitter"></i></a>
-      </div>
-    </div>
-  </footer>
- 
-  <script>
-    const slider = document.getElementById('slider');
-    const cardWidth = 220 + 32;
-    let currentIndex = 0;
- 
-    const cards = slider.querySelectorAll('.product-card');
-    const totalCards = cards.length;
-    const visibleCards = 3;
-    const maxIndex = totalCards - visibleCards;
- 
-    document.getElementById('next').addEventListener('click', () => {
-      if (currentIndex < maxIndex) {
-        currentIndex++;
-        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      }
-    });
- 
-    document.getElementById('prev').addEventListener('click', () => {
-      if (currentIndex > 0) {
-        currentIndex--;
-        slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      }
-    });
-  </script>
- 
+        <div class="footer-left">
+            <h3> RRLC <span>Supermarket</span></h3>
+
+            <p class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="product-slider.html">Products</a>
+                <a href="promos.html">Promos</a>
+                <a href="contact.html">Contact</a>
+            </p>
+
+            <p class="footer-company-name">Copyright © 2026 
+                <strong>RRLC Supermarket</strong> | All rights reserved
+            </p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="bx bx-map"></i>
+                <p><span>Magalang</span> Pampanga</p>
+            </div>
+
+            <div>
+                <i class="bx bx-phone"></i>
+                <p>+639 3XX 14XX 10</p>
+            </div>
+
+            <div>
+                <i class="bx bx-envelope"></i>
+                <p><a href="mailto:rrlcsupermarket@gmail.com">rrlcsupermarket@gmail.com</a></p>
+            </div>
+        </div>
+
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About the company</span>
+                <strong>RRLC Supermarket</strong> is a local retail store that offers a wide range of 
+                affordable groceries, household goods, and daily essentials. It serves as a convenient one-stop shop 
+                for communities in Pampanga and nearby areas.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="bx bxl-facebook"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
