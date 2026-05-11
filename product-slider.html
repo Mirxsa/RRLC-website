@@ -9,40 +9,45 @@
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <style>
-    body {
-  font-family: Arial, Times New Roman;
+   body {
+  font-family: Arial, "Times New Roman", serif;
   margin: 0;
+  padding: 0;
   background: white;
   color: black;
   overflow-x: hidden;
 }
 
-/* ===== PRODUCTS SECTION ===== */
+/* SECTION */
 .products-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 3rem;
+  gap: 3rem;
+  padding: 4rem 6%;
   min-height: 100vh;
-  padding-bottom: 3rem;
-  gap: 2rem;
+  box-sizing: border-box;
+  flex-wrap: wrap;
 }
 
+/* LEFT INFO */
 .products-info {
   flex: 1;
-  padding-right: 2rem;
+  min-width: 280px;
 }
 
 .products-info h1 {
   font-size: 3rem;
   color: black;
   margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
 .products-info p {
   font-size: 1rem;
   color: #555;
   margin-bottom: 2rem;
+  line-height: 1.6;
 }
 
 .products-info button {
@@ -53,49 +58,40 @@
   border-radius: 25px;
   cursor: pointer;
   font-weight: 600;
-  transition: 0.3s;
 }
 
-.products-info button:hover {
-  background: #444;
-}
-
-/* ===== SLIDER ===== */
+/* SLIDER AREA */
 .slider-container {
   flex: 2;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  overflow: visible;
+  overflow: hidden;
   width: 100%;
 }
 
 .slider {
   display: flex;
-  gap: 2rem;
-  padding: 1rem 0;
+  gap: 1.5rem;
   transition: transform 0.5s ease-in-out;
+  padding: 1rem 0;
 }
 
+/* PRODUCT CARD */
 .product-card {
-  background: grey;
+  background: #d3d3d3;
   border: 2px solid black;
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   width: 250px;
-  min-width: 250px;
-  height: 350px;
+  min-height: 350px;
   text-align: center;
   flex-shrink: 0;
-  margin: 10px 0;
   overflow: hidden;
+  padding-bottom: 1rem;
 }
 
 .product-card img {
   width: 100%;
   height: 250px;
   object-fit: cover;
-  border-radius: 18px 18px 0 0;
 }
 
 .product-card h3 {
@@ -110,17 +106,11 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   cursor: pointer;
-  margin-bottom: 1rem;
-  transition: 0.3s;
 }
 
-.product-card button:hover {
-  background: #444;
-}
-
-/* ===== ARROWS ===== */
+/* SLIDER BUTTONS */
 .slider-controls {
-  margin-top: 1.5rem;
+  margin-top: 2rem;
   justify-content: center;
   display: flex;
   gap: 1rem;
@@ -134,20 +124,19 @@
   border-radius: 50%;
   cursor: pointer;
   font-size: 1.2rem;
-  transition: background 0.3s;
+  transition: 0.3s;
 }
 
 .arrow:hover {
   background: grey;
 }
 
-/* ===== MOBILE RESPONSIVE ===== */
+/* RESPONSIVE */
 @media (max-width: 768px) {
-
   .products-section {
     flex-direction: column;
+    padding: 2rem 5%;
     text-align: center;
-    padding: 1.5rem;
   }
 
   .products-info {
@@ -155,36 +144,11 @@
   }
 
   .products-info h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .slider {
-    gap: 1rem;
-  }
-
-  .product-card h3 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  font-size: 1.2rem;
-}
-
-.product-card button {
-  background: black;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  cursor: pointer;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-  transition: 0.3s;
-}
-
-.product-card button:hover {
-  background: #444;
-}
-  .product-card img {
-    height: 200px;
+    justify-content: center;
   }
 }
 </style>
