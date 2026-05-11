@@ -3,29 +3,62 @@ const next = document.getElementById('next');
 const prev = document.getElementById('prev');
 
 let currentIndex = 0;
+
 const cardsPerSlide = 3;
 const totalCards = slider.children.length;
 
+// dynamic card width
+const card = slider.children[0];
+const cardStyle = window.getComputedStyle(card);
 
-const cardWidth = 250 + 32; 
+const cardWidth =
+  card.offsetWidth +
+  parseInt(cardStyle.marginRight || 0);
 
+const maxIndex = totalCards - cardsPerSlide;
+
+// NEXT
 next.addEventListener('click', () => {
-  if (currentIndex + cardsPerSlide < totalCards) {
+
+  if (currentIndex < maxIndex) {
+
     currentIndex += cardsPerSlide;
+
+    // prevent overshooting
+    if (currentIndex > maxIndex) {
+      currentIndex = maxIndex;
+    }
+
   } else {
-    currentIndex = 0; 
+
+    // balik sa start
+    currentIndex = 0;
   }
-  slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+
+  updateSlider();
 });
 
-
+// PREV
 prev.addEventListener('click', () => {
-  if (currentIndex - cardsPerSlide >= 0) {
+
+  if (currentIndex > 0) {
+
     currentIndex -= cardsPerSlide;
+
+    if (currentIndex < 0) {
+      currentIndex = 0;
+    }
+
   } else {
-  
-    currentIndex = totalCards - cardsPerSlide;
+
+    // punta sa last complete slide
+    currentIndex = maxIndex;
   }
 
-  slider.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+  updateSlider();
 });
+
+function updateSlider() {
+  slider.style.transform =
+    `translateX(-${currentIndex * cardWidth}px)`;
+}
